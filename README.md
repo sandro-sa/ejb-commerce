@@ -1,8 +1,7 @@
-Aqui está o texto corrigido:
 
----
 
 # E-COMMERCE COM EJB
+![alt text](img/image-25.png)
 
 **Neste exemplo, não teremos integração com banco de dados; utilizaremos uma classe como uma lista de produtos.**
 
@@ -270,6 +269,7 @@ public class EjbCompra {
 ```
 
 ### 10. Conectando a regra de negócios com o cliente JavaServer Faces.
+
 ![alt text](img/image-20.png)
 
 - Com escopo de session, porque a requisição não pode ser resolvida em uma só chamada. O cliente pode adicionar e remover itens várias vezes.
@@ -279,7 +279,6 @@ public class EjbCompra {
 ![alt text](img/image-22.png)
 
 - Código de exemplo:
-
 ```java
 package br.jsf;
 
