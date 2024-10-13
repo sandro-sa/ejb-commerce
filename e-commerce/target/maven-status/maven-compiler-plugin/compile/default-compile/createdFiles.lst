@@ -1,0 +1,9 @@
+br\jsf\JsfProduto.class
+br\data\crud\EjbCompra.class
+br\jsf\JsfCompra.class
+br\resources\JavaEE8Resource.class
+br\data\model\Produto.class
+br\data\crud\CrudProduto.class
+br\ejb\EjbProduto.class
+br\data\model\ItemCompra.class
+br\JAXRSConfiguration.class

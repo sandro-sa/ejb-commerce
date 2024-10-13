@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>EJB-COMMERCE</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+            th {
+                background-color: #007bff;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #ddd;
+            }
+            .button-a {
+                background-color: #28a745;
+                color: white;
+                border: none;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 4px;
+                margin-right: 10px;
+            }
+            .button-a:hover {
+                background-color: #218838;
+            }
+             .button-r {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 4px;
+     
+            }
+            .button-r:hover {
+                background-color: crimson;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Lista de Produtos</h1>
+        <h:form>
+            <h:dataTable value="#{jsfProduto.all}" var="prod">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Código"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.codigo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Descrição"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.descricao}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Ação"/>
+                    </f:facet>
+                    <h:commandButton value="Adicionar" action="#{jsfCompra.add(prod)}" styleClass="button-a"/>
+                    <h:commandButton value="Remover" action="#{jsfCompra.remove(prod)}" styleClass="button-r"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        <h1>Itens da Compra</h1>
+        <h:form>
+            <h:dataTable value="#{jsfCompra.all}" var="item">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Código"/>
+                    </f:facet>
+                    <h:outputText value="#{item.produto.codigo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Descrição"/>
+                    </f:facet>
+                    <h:outputText value="#{item.produto.descricao}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Quantidade"/>
+                    </f:facet>
+                    <h:outputText value="#{item.quantidade}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
