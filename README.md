@@ -19,28 +19,28 @@ Aqui está o texto corrigido:
 ![Criar um projeto novo](img/image.png)
 
 - Dê um nome ao projeto e ao pacote.
-  ![figura com nome do projeto](img/image-1.png)
+![figura com nome do projeto](img/image-1.png)
 
-- Adote o Payara Server na versão Java EE 8 Web.
-  ![alt text](img/image-2.png)
+- Adote o Payara Server na versão Java EE 8 Web.!
+[alt text](img/image-2.png)
 
 ### 2. Adicionar o Framework JavaServer Faces para ser o cliente do EJB
-
 ![alt text](img/image-3.png)
 
 ### 3. Dentro do pacote `br`, crie a classe modelo `Produto`, responsável pela persistência.
-
 ![alt text](img/image-4.png)
 
 - Utilizaremos o Lombok para que a classe fique mais enxuta. **Para utilizar o Lombok, há duas maneiras: através da pesquisa pela própria IDE ou adicionando as dependências manualmente.**
-  Clique com o mouse na lâmpada, escolha a opção "Procurar".
-  ![alt text](img/image-5.png)
+
+- Clique com o mouse na lâmpada, escolha a opção "Procurar".
+![alt text](img/image-5.png)
   Preencha o campo com a dependência desejada.
-  ![alt text](img/image-6.png)
-  Aguarde alguns instantes para localizar a dependência, clique nela e depois em "Add".
-  ![alt text](img/image-7.png)
-  Depois que concluir a instalação, importe a dependência.
-  ![alt text](img/image-8.png)
+![alt text](img/image-6.png)
+- Aguarde alguns instantes para localizar a dependência, clique nela e depois em "Add".
+![alt text](img/image-7.png)
+- Depois que concluir a instalação, importe a dependência.
+![alt text](img/image-8.png)
+
 
 - Código de exemplo:
   
@@ -69,7 +69,6 @@ Aqui está o texto corrigido:
   ```
 
 ### 4. Agora, no pacote `br`, crie uma nova classe que servirá de CRUD para a classe `Produto`. Neste caso, usaremos uma lista de produtos.
-
 ![alt text](img/image-23.png)
 
 - Crie uma lista contendo alguns produtos:
@@ -98,9 +97,9 @@ public class CrudProduto {
 ### 5. Crie um EJB para listar os produtos.
 
 - Como é uma única chamada, utilizaremos o `Stateless`.
-  ![alt text](img/image-10.png)
-  ![alt text](img/image-11.png)
-  ![alt text](img/image-12.png)
+![alt text](img/image-10.png)
+![alt text](img/image-11.png)
+![alt text](img/image-12.png)
 
 - Crie um método para retornar a lista de produtos:
 
@@ -126,14 +125,14 @@ public class EjbProduto {
 ## 6. Conectando a regra de negócios com o cliente JavaServer Faces
 
 - Crie um CDI Bean para conectar o Java com XHTML.
-  ![alt text](img/image-15.png)
+![alt text](img/image-15.png)
 
 - Com escopo de request, porque com uma requisição a lista é resolvida.
-  ![alt text](img/image-16.png)
+![alt text](img/image-16.png)
 
 - Invocando o EJB:
-  ![alt text](img/image-17.png)
-  ![alt text](img/image-18.png)
+![alt text](img/image-17.png)
+![alt text](img/image-18.png)
 
 ```java
 package br.jsf;
@@ -187,7 +186,6 @@ public class JsfProduto {
 ```
 
 ### 8. Criando modelo `ItemCompra`
-
 ![alt text](img/image-19.png)
 
 ```java
@@ -214,7 +212,6 @@ public class ItemCompra {
 ```
 
 ### 9. Criar um EJB mantendo o estado para criar a regra de negócio.
-
 ![alt text](img/image-24.png)
 
 - Código exemplo:
@@ -273,14 +270,13 @@ public class EjbCompra {
 ```
 
 ### 10. Conectando a regra de negócios com o cliente JavaServer Faces.
-
 ![alt text](img/image-20.png)
 
 - Com escopo de session, porque a requisição não pode ser resolvida em uma só chamada. O cliente pode adicionar e remover itens várias vezes.
-  ![alt text](img/image-21.png)
+![alt text](img/image-21.png)
 
 - Chamando o EJB:
-  ![alt text](img/image-22.png)
+![alt text](img/image-22.png)
 
 - Código de exemplo:
 
